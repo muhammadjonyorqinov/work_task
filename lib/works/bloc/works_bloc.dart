@@ -22,7 +22,6 @@ class WorksBloc extends Bloc<WorksEvent, WorksState> {
             isSelected: false,
           ),
         );
-        print(works.length);
         yield WorksLoadedState(works: works);
       } catch (e) {
         yield WorksErrorState(e.toString());
@@ -45,7 +44,6 @@ class WorksBloc extends Bloc<WorksEvent, WorksState> {
         final work =
             works.firstWhere((element) => element.number == event.number);
         work.isSelected = !work.isSelected;
-        print(works.length);
         yield WorksLoadedState(works: works);
       } catch (e) {
         yield WorksErrorState(e.toString());
@@ -59,7 +57,6 @@ class WorksBloc extends Bloc<WorksEvent, WorksState> {
             work.isSelected = false;
           }
         }
-        print(works.length);
         yield WorksLoadedState(works: works);
       } catch (e) {
         yield WorksErrorState(e.toString());

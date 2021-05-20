@@ -13,7 +13,6 @@ class TasksBody extends StatelessWidget {
     return BlocConsumer<TasksBloc, TasksState>(
       listener: (BuildContext context, TasksState state) {},
       builder: (BuildContext context, TasksState state) {
-        print(state);
         if (state is TasksLoadedState) {
           if (state.tasks.isEmpty) {
             return Center(

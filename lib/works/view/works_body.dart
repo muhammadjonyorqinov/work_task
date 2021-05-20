@@ -16,7 +16,6 @@ class WorksBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<WorksBloc, WorksState>(
       builder: (BuildContext context, WorksState state) {
-        print(state);
         if (state is WorksLoadedState) {
           //loaded state
           if (state.works.isEmpty) {

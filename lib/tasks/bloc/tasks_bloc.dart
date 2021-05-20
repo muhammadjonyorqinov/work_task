@@ -16,11 +16,10 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
       yield TasksLoadingState();
       try {
         int time = 0;
-        for(Work work in event.selected){
-          time+=work.duration;
+        for (Work work in event.selected) {
+          time += work.duration;
         }
-        tasks.add(Task(event.selected,time));
-        print(tasks.length);
+        tasks.add(Task(event.selected, time));
         yield TasksLoadedState(tasks: tasks);
       } catch (e) {
         yield TasksErrorState(e.toString());
